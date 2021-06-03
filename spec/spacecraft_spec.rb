@@ -8,5 +8,17 @@ RSpec.describe 'Spacecraft' do
 
       expect(daedalus).to be_a(Spacecraft)
     end
+
+    it 'has a name' do
+      daedalus = Spacecraft.new({name: 'Daedalus', fuel: 400})
+
+      expect(daedalus.name).to eq('Daedalus')
+    end
+
+    it 'has fuel' do
+      daedalus = Spacecraft.new({name: 'Daedalus', fuel: 400})
+
+      expect(daedalus.fuel).to eq(400)
+    end
   end
 end
