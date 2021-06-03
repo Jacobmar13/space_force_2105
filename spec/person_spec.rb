@@ -34,4 +34,17 @@ RSpec.describe 'Person' do
       expect(kathy.specialties).to eq([:astrophysics, :quantum_mechanics])
     end
   end
+
+  context '(Iteration 2)' do
+    it 'can give individual specialty experience' do
+      kathy = Person.new('Kathy Chan', 10)
+      kathy.add_specialty(:astrophysics)
+      kathy.add_specialty(:quantum_mechanics)
+
+      expect(kathy.individual_specialty_experience).to eq({
+        astrophysics: 10,
+        quantum_mechanics: 10
+      })
+    end
+  end
 end
