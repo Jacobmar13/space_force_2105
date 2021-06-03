@@ -10,4 +10,8 @@ class Flotilla
   def add_ship(ship)
     @ships << ship
   end
+
+  def add_personnel(personnel)
+    @personnel << personnel
+  end
 end
