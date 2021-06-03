@@ -28,5 +28,15 @@ RSpec.describe 'Flotilla' do
 
       expect(seventh_flotilla.ships).to eq([])
     end
+
+    it 'can add ships' do
+      seventh_flotilla = Flotilla.new({designation: 'Seventh Flotilla'})
+      daedalus = Spacecraft.new({name: 'Daedalus', fuel: 400})
+      daedalus.add_requirement({astrophysics: 6})
+      daedalus.add_requirement({quantum_mechanics: 3})
+      seventh_flotilla.add_ship(daedalus)
+
+      expect(seventh_flotilla.ships).to eq([daedalus])
+    end
   end
 end
